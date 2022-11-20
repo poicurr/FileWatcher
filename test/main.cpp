@@ -3,7 +3,7 @@
 
 int main() {
   FileWatcher fw("./test.md");
-  fw.watch([](){
-    std::cout << "modified!" << std::endl;
+  fw.watch([](const std::string& path){
+    std::cout << "modified: " << path << std::endl;
   });
 }
